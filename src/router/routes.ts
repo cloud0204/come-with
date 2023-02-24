@@ -7,9 +7,32 @@ const routes: RouteRecordRaw[] = [
     children: [
       { path: '', component: () => import('pages/IndexPage.vue') },
       { path: 'DetailPage', component: () => import('pages/DetailPage.vue') },
-      { path: 'PostList', component: () => import('pages/PostList.vue') },
+      {
+        path: 'PostsPage',
+        component: () => import('pages/PostsPage.vue'),
+      },
+      {
+        path: 'post/:postId',
+        component: () => import('components/PostDetail.vue'),
+        // children: [
+        //   {
+        //     path: ':postId',
+        //     component: () => import('components/PostDetail.vue'),
+        //   },
+        // ],
+      },
     ],
   },
+  // {
+  //   path: '/post',
+  //   component: () => import('pages/PostsPage.vue'),
+  //   children: [
+  //     {
+  //       path: ':postId',
+  //       component: () => import('components/PostDetail.vue'),
+  //     },
+  //   ],
+  // },
   // {
   //   path: '/post',
   //   component: () => import('layouts/MainLayout.vue'),
