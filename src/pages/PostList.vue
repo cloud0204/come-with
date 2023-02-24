@@ -1,203 +1,149 @@
 <template>
-  <!-- <q-page class="row items-center justify-evenly"> -->
-    <!-- Page Header Start -->
-    <div class="page-header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <h2>Upcoming Events</h2>
-                    </div>
-                    <div class="col-12">
-                        <a href="">Home</a>
-                        <a href="">Events</a>
-                    </div>
-                </div>
-            </div>
-    </div>
-    <!-- Page Header End -->
-
-    <!-- Event Start -->
-    <div class="event">
-        <div class="container">
-            <div class="section-header text-center">
-                <p>Upcoming Events</p>
-                <h2>Be ready for our upcoming charity events</h2>
-            </div>
-            <div class="row  justify-around  items-stretch">
-                <div class="col-sm-5">
-                    <div class="event-item">
-                        <img src="public/img/event-1.jpg" alt="Image">
-                        <div class="event-content">
-                            <div class="event-meta">
-                                <p>
-                                    <q-icon name="today" />
-                                    01-Jan-45
-                                </p>
-                                <p>
-                                    <q-icon name="schedule" />
-                                    8:00 - 10:00
-                                </p>
-                                <p>
-                                    <q-icon name="place" />
-                                    New York
-                                </p>
-                            </div>
-                            <div class="event-text">
-                                <div class="column flex-center">
-                                    <h3>Lorem ipsum dolor sit</h3>
-                                    <p>
-                                        Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte liqum metus tortor
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto quisquam dolor aliquam aspernatur eaque, saepe minus sapiente ab qui quae natus voluptates molestias libero ad hic! Iure minima mollitia odio.
-                                    </p>
-                                    
-                                    <a class="btn btn-custom" href="">Join Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-5">
-                    <div class="event-item">
-                        <img src="public/img/event-1.jpg" alt="Image">
-                        <div class="event-content">
-                            <div class="event-meta">
-                                <p>
-                                    <q-icon name="today" />
-                                    01-Jan-45
-                                </p>
-                                <p>
-                                    <q-icon name="schedule" />
-                                    8:00 - 10:00
-                                </p>
-                                <p>
-                                    <q-icon name="place" />
-                                    New York
-                                </p>
-                            </div>
-                            <div class="event-text">
-                                <div class="column flex-center">
-                                    <h3>Lorem ipsum dolor sit</h3>
-                                    <p>
-                                        Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte liqum metus tortor
-                                    </p>
-                                    
-                                    <a class="btn btn-custom" href="">Join Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-5">
-                    <div class="event-item">
-                        <img src="public/img/event-1.jpg" alt="Image">
-                        <div class="event-content">
-                            <div class="event-meta">
-                                <p>
-                                    <q-icon name="today" />
-                                    01-Jan-45
-                                </p>
-                                <p>
-                                    <q-icon name="schedule" />
-                                    8:00 - 10:00
-                                </p>
-                                <p>
-                                    <q-icon name="place" />
-                                    New York
-                                </p>
-                            </div>
-                            <div class="event-text">
-                                <div class="column flex-center">
-                                    <h3>Lorem ipsum dolor sit</h3>
-                                    <p>
-                                        Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte liqum metus tortor
-                                    </p>
-                                    
-                                    <a class="btn btn-custom" href="">Join Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-5">
-                    <div class="event-item">
-                        <img src="public/img/event-1.jpg" alt="Image">
-                        <div class="event-content">
-                            <div class="event-meta">
-                                <p>
-                                    <q-icon name="today" />
-                                    01-Jan-45
-                                </p>
-                                <p>
-                                    <q-icon name="schedule" />
-                                    8:00 - 10:00
-                                </p>
-                                <p>
-                                    <q-icon name="place" />
-                                    New York
-                                </p>
-                            </div>
-                            <div class="event-text">
-                                <div class="column flex-center">
-                                    <h3>Lorem ipsum dolor sit</h3>
-                                    <p>
-                                        Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte liqum metus tortor
-                                    </p>
-                                    
-                                    <a class="btn btn-custom" href="">Join Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <div class="row">
+    <div class="col-md-9 col-grow">
+      <q-page-container>
+        <router-view />
+      </q-page-container>
+      <div class="q-pa-md items-start q-gutter-md">
+        <q-card
+          class="my-card"
+          flat
+          bordered
+          v-for="post in posts"
+          :key="post.id"
+        >
+          <q-item clickable tag="a" :to="'/post/' + post.id">
+            <q-card-section horizontal>
+              <div class="col-3">
+                <q-img
+                  :src="post.thumbnail || 'http://placeimg.com/640/480/nature'"
+                  :to="'post/' + post.id"
+                />
+              </div>
+              <div class="col-9">
+                <q-card-section>
+                  <div class="text-h5 q-mt-sm q-mb-xs">{{ post.title }}</div>
+                  {{ post.summary }}
+                  <div class="flex justify-start col self-end">
+                    <p>
+                      <q-icon name="visibility" />
+                      {{ post.visits }}/
+                    </p>
+                    <p>
+                      <q-icon name="schedule" />
+                      {{
+                        new Date(post.updateTime).toISOString().slice(0, 10)
+                      }}/
+                    </p>
+                    <p>
+                      <q-icon name="comment" />
+                      {{ post.commentCount }}
+                    </p>
+                  </div>
+                  <q-badge outline color="primary" label="Outline" />
+                </q-card-section>
+              </div>
+            </q-card-section>
+          </q-item>
+        </q-card>
+        <div class="q-pa-lg flex flex-center">
+          <div class="q-gutter-md">
+            <q-pagination
+              v-model="currentPage"
+              :max="pages"
+              direction-links
+              outline
+              color="orange"
+              active-design="unelevated"
+              active-color="brown"
+              active-text-color="orange"
+              @click="changePage(currentPage - 1)"
+            />
+          </div>
         </div>
+      </div>
     </div>
-    <!-- Event End -->
-  <!-- </q-page> -->
+    <div class="col-md-3 col-grow">
+      <TabComponent />
+    </div>
+  </div>
 </template>
 
 <style lang="css" scoped>
 @import url('assets/css/style');
-    /* .single {
+/* .single {
       padding: 90px;
     } */
 </style>
 
 <script lang="ts">
-import { Todo, Meta } from 'components/models';
-// import ExampleComponent from 'components/ExampleComponent.vue';
-import { defineComponent, ref } from 'vue';
+import { defineComponent, onMounted, Ref, ref } from 'vue';
+import { useQuasar } from 'quasar';
+import { useApi } from 'boot/axios';
+import { Post } from '../components/models';
+import TabComponent from 'components/Tabs.vue';
 
 export default defineComponent({
   name: 'PostList',
-  // components: { ExampleComponent },
-  setup () {
-    const todos = ref<Todo[]>([
-      {
-        id: 1,
-        content: 'ct1'
-      },
-      {
-        id: 2,
-        content: 'ct2'
-      },
-      {
-        id: 3,
-        content: 'ct3'
-      },
-      {
-        id: 4,
-        content: 'ct4'
-      },
-      {
-        id: 5,
-        content: 'ct5'
+  components: { TabComponent },
+  setup() {
+    const $q = useQuasar();
+    const posts: Ref<Post[]> = ref([]);
+    const currentPage = ref(1);
+    const pages = ref(1);
+    // function aaa(todos: Ref<Post[]>): Ref<Post[]> {
+    //   const todoCount: Ref<Post[]> = async () => {
+
+    //   try {
+    //     const { data } = await useApi().getPosts;
+    //     console.log(data.data);
+    //     return data.data.content;
+
+    //   } catch (error) {
+    //     $q.notify({
+    //       color: 'negative',
+    //       position: 'top',
+    //       message: 'Api connecting failed',
+    //       icon: 'report_problem',
+    //     });
+    //   }
+    // };
+    //   return todoCount;
+    // }
+    const changePage = async (page: number) => {
+      try {
+        const { data } = await useApi().getPostsByPage(page);
+        console.log(data.data);
+        posts.value = data.data.content;
+        currentPage.value = data.data.page + 1;
+        pages.value = data.data.pages;
+      } catch (error) {
+        $q.notify({
+          color: 'negative',
+          position: 'top',
+          message: 'Api connecting failed',
+          icon: 'report_problem',
+        });
       }
-    ]);
-    const meta = ref<Meta>({
-      totalCount: 1200
+    };
+
+    onMounted(async () => {
+      try {
+        const { data } = await useApi().getPosts();
+        console.log(data.data);
+        posts.value = data.data.content;
+        currentPage.value = data.data.page + 1;
+        pages.value = data.data.pages;
+      } catch (error) {
+        $q.notify({
+          color: 'negative',
+          position: 'top',
+          message: 'Api connecting failed',
+          icon: 'report_problem',
+        });
+      }
     });
-    return { todos, meta };
-  }
+    return { posts, currentPage, pages, changePage };
+  },
 });
 </script>

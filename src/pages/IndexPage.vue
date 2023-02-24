@@ -1,27 +1,42 @@
 <template>
   <q-page class="row items-center justify-evenly">
-    <example-component
-      title="Example component"
-      active
-      :todos="todos"
-      :meta="meta"
-    ></example-component>
-  </q-page>
+    <example-component title="Example component" active :todos="todos" :meta="meta"></example-component>
+    <!-- {{ hi?'':hi.value.editorType }} -->
+</q-page>
 </template>
 
 <script lang="ts">
 import { Todo, Meta } from 'components/models';
 import ExampleComponent from 'components/ExampleComponent.vue';
-import { defineComponent, ref } from 'vue';
+import { defineComponent, onMounted, ref } from 'vue';
+import { useCounterStore } from 'stores/example-store';
+import { aaa } from 'stores/api-store';
 
 export default defineComponent({
   name: 'IndexPage',
   components: { ExampleComponent },
-  setup () {
+  setup() {
+    const ss = useCounterStore()
+    const aaapiu = aaa()
+    const hi = ref(null)
+
+    onMounted(async () => {
+      console.log(aaapiu.hhhh);
+      await aaapiu.increment()
+      hi.value = aaapiu.hhhh
+    })
+
+    //     const jjj=()=>{
+    //       if(hi.value==null){
+    // return ''
+    //       }
+    //       return hi.value.editorType;
+    //     }
+
     const todos = ref<Todo[]>([
       {
         id: 1,
-        content: 'ct1'
+        content: 'ct1' + ss.uuuu()
       },
       {
         id: 2,
@@ -43,7 +58,7 @@ export default defineComponent({
     const meta = ref<Meta>({
       totalCount: 1200
     });
-    return { todos, meta };
+    return { todos, meta, hi };
   }
 });
 </script>

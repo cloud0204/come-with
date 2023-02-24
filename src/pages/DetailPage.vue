@@ -6,7 +6,7 @@
       <div class="row justify-around">
         <div class="col-sm-8">
           <div class="single-content">
-            <img src="public/img/single.jpg" />
+            <img src="img/single.jpg" />
             <h2>Lorem ipsum dolor sit amerythehrtdfet9</h2>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
@@ -98,7 +98,7 @@
           </div>
           <div class="single-bio">
             <div class="single-bio-img">
-              <img src="public/img/user.jpg" />
+              <img src="img/user.jpg" />
             </div>
             <div class="single-bio-text">
               <h3>Author Name</h3>
@@ -114,7 +114,7 @@
             <div class="owl-carousel related-slider">
               <div class="post-item">
                 <div class="post-img">
-                  <img src="public/img/post-1.jpg" />
+                  <img src="img/post-1.jpg" />
                 </div>
                 <div class="post-text">
                   <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
@@ -126,7 +126,7 @@
               </div>
               <div class="post-item">
                 <div class="post-img">
-                  <img src="public/img/post-2.jpg" />
+                  <img src="img/post-2.jpg" />
                 </div>
                 <div class="post-text">
                   <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
@@ -138,7 +138,7 @@
               </div>
               <div class="post-item">
                 <div class="post-img">
-                  <img src="public/img/post-3.jpg" />
+                  <img src="img/post-3.jpg" />
                 </div>
                 <div class="post-text">
                   <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
@@ -150,7 +150,7 @@
               </div>
               <div class="post-item">
                 <div class="post-img">
-                  <img src="public/img/post-4.jpg" />
+                  <img src="img/post-4.jpg" />
                 </div>
                 <div class="post-text">
                   <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
@@ -169,7 +169,7 @@
               <li class="comment-item">
                 <div class="comment-body">
                   <div class="comment-img">
-                    <img src="public/img/user.jpg" />
+                    <img src="img/user.jpg" />
                   </div>
                   <div class="comment-text">
                     <h3><a href="">Josh Dunn</a></h3>
@@ -186,7 +186,7 @@
               <li class="comment-item">
                 <div class="comment-body">
                   <div class="comment-img">
-                    <img src="public/img/user.jpg" />
+                    <img src="img/user.jpg" />
                   </div>
                   <div class="comment-text">
                     <h3><a href="">Josh Dunn</a></h3>
@@ -203,7 +203,7 @@
                   <li class="comment-item">
                     <div class="comment-body">
                       <div class="comment-img">
-                        <img src="public/img/user.jpg" />
+                        <img src="img/user.jpg" />
                       </div>
                       <div class="comment-text">
                         <h3><a href="">Josh Dunn</a></h3>
@@ -228,7 +228,13 @@
           <div class="sidebar">
             <div class="sidebar-widget">
               <div class="search-widget">
-                <q-input color="grey-3" label-color="orange" outlined v-model="text" label="Search Keyword">
+                <q-input
+                  color="grey-3"
+                  label-color="orange"
+                  outlined
+                  v-model="text"
+                  label="Search Keyword"
+                >
                   <template v-slot:append>
                     <q-icon name="search" color="orange" />
                   </template>
@@ -241,7 +247,7 @@
               <div class="recent-post">
                 <div class="post-item">
                   <div class="post-img">
-                    <img src="public/img/post-1.jpg" />
+                    <img src="img/post-1.jpg" />
                   </div>
                   <div class="post-text">
                     <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
@@ -253,7 +259,7 @@
                 </div>
                 <div class="post-item">
                   <div class="post-img">
-                    <img src="public/img/post-2.jpg" />
+                    <img src="img/post-2.jpg" />
                   </div>
                   <div class="post-text">
                     <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
@@ -265,7 +271,7 @@
                 </div>
                 <div class="post-item">
                   <div class="post-img">
-                    <img src="public/img/post-3.jpg" />
+                    <img src="img/post-3.jpg" />
                   </div>
                   <div class="post-text">
                     <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
@@ -277,7 +283,7 @@
                 </div>
                 <div class="post-item">
                   <div class="post-img">
-                    <img src="public/img/post-4.jpg" />
+                    <img src="img/post-4.jpg" />
                   </div>
                   <div class="post-text">
                     <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
@@ -289,7 +295,7 @@
                 </div>
                 <div class="post-item">
                   <div class="post-img">
-                    <img src="public/img/post-5.jpg" />
+                    <img src="img/post-5.jpg" />
                   </div>
                   <div class="post-text">
                     <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
@@ -304,7 +310,7 @@
 
             <div class="sidebar-widget">
               <div class="image-widget">
-                <a href="#"><img src="public/img/blog-1.jpg" alt="Image" /></a>
+                <a href="#"><img src="img/blog-1.jpg" alt="Image" /></a>
               </div>
             </div>
 
@@ -312,13 +318,22 @@
               <div class="tab-post">
                 <ul class="nav nav-pills nav-justified">
                   <li class="nav-item">
-                    <a class="nav-link active" data-toggle="pill" href="#featured">Featured</a>
+                    <a
+                      class="nav-link active"
+                      data-toggle="pill"
+                      href="#featured"
+                      >Featured</a
+                    >
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" data-toggle="pill" href="#popular">Popular</a>
+                    <a class="nav-link" data-toggle="pill" href="#popular"
+                      >Popular</a
+                    >
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" data-toggle="pill" href="#latest">Latest</a>
+                    <a class="nav-link" data-toggle="pill" href="#latest"
+                      >Latest</a
+                    >
                   </li>
                 </ul>
 
@@ -326,10 +341,12 @@
                   <div id="featured" class="container tab-pane active">
                     <div class="post-item">
                       <div class="post-img">
-                        <img src="public/img/post-1.jpg" />
+                        <img src="img/post-1.jpg" />
                       </div>
                       <div class="post-text">
-                        <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                        <a href=""
+                          >Lorem ipsum dolor sit amet consec adipis elit</a
+                        >
                         <div class="post-meta">
                           <p>By<a href="">Admin</a></p>
                           <p>In<a href="">Web Design</a></p>
@@ -338,10 +355,12 @@
                     </div>
                     <div class="post-item">
                       <div class="post-img">
-                        <img src="public/img/post-2.jpg" />
+                        <img src="img/post-2.jpg" />
                       </div>
                       <div class="post-text">
-                        <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                        <a href=""
+                          >Lorem ipsum dolor sit amet consec adipis elit</a
+                        >
                         <div class="post-meta">
                           <p>By<a href="">Admin</a></p>
                           <p>In<a href="">Web Design</a></p>
@@ -350,10 +369,12 @@
                     </div>
                     <div class="post-item">
                       <div class="post-img">
-                        <img src="public/img/post-3.jpg" />
+                        <img src="img/post-3.jpg" />
                       </div>
                       <div class="post-text">
-                        <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                        <a href=""
+                          >Lorem ipsum dolor sit amet consec adipis elit</a
+                        >
                         <div class="post-meta">
                           <p>By<a href="">Admin</a></p>
                           <p>In<a href="">Web Design</a></p>
@@ -362,10 +383,12 @@
                     </div>
                     <div class="post-item">
                       <div class="post-img">
-                        <img src="public/img/post-4.jpg" />
+                        <img src="img/post-4.jpg" />
                       </div>
                       <div class="post-text">
-                        <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                        <a href=""
+                          >Lorem ipsum dolor sit amet consec adipis elit</a
+                        >
                         <div class="post-meta">
                           <p>By<a href="">Admin</a></p>
                           <p>In<a href="">Web Design</a></p>
@@ -374,10 +397,12 @@
                     </div>
                     <div class="post-item">
                       <div class="post-img">
-                        <img src="public/img/post-5.jpg" />
+                        <img src="img/post-5.jpg" />
                       </div>
                       <div class="post-text">
-                        <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                        <a href=""
+                          >Lorem ipsum dolor sit amet consec adipis elit</a
+                        >
                         <div class="post-meta">
                           <p>By<a href="">Admin</a></p>
                           <p>In<a href="">Web Design</a></p>
@@ -388,10 +413,12 @@
                   <div id="popular" class="container tab-pane fade">
                     <div class="post-item">
                       <div class="post-img">
-                        <img src="public/img/post-1.jpg" />
+                        <img src="img/post-1.jpg" />
                       </div>
                       <div class="post-text">
-                        <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                        <a href=""
+                          >Lorem ipsum dolor sit amet consec adipis elit</a
+                        >
                         <div class="post-meta">
                           <p>By<a href="">Admin</a></p>
                           <p>In<a href="">Web Design</a></p>
@@ -400,10 +427,12 @@
                     </div>
                     <div class="post-item">
                       <div class="post-img">
-                        <img src="public/img/post-2.jpg" />
+                        <img src="img/post-2.jpg" />
                       </div>
                       <div class="post-text">
-                        <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                        <a href=""
+                          >Lorem ipsum dolor sit amet consec adipis elit</a
+                        >
                         <div class="post-meta">
                           <p>By<a href="">Admin</a></p>
                           <p>In<a href="">Web Design</a></p>
@@ -412,10 +441,12 @@
                     </div>
                     <div class="post-item">
                       <div class="post-img">
-                        <img src="public/img/post-3.jpg" />
+                        <img src="img/post-3.jpg" />
                       </div>
                       <div class="post-text">
-                        <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                        <a href=""
+                          >Lorem ipsum dolor sit amet consec adipis elit</a
+                        >
                         <div class="post-meta">
                           <p>By<a href="">Admin</a></p>
                           <p>In<a href="">Web Design</a></p>
@@ -424,10 +455,12 @@
                     </div>
                     <div class="post-item">
                       <div class="post-img">
-                        <img src="public/img/post-4.jpg" />
+                        <img src="img/post-4.jpg" />
                       </div>
                       <div class="post-text">
-                        <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                        <a href=""
+                          >Lorem ipsum dolor sit amet consec adipis elit</a
+                        >
                         <div class="post-meta">
                           <p>By<a href="">Admin</a></p>
                           <p>In<a href="">Web Design</a></p>
@@ -436,10 +469,12 @@
                     </div>
                     <div class="post-item">
                       <div class="post-img">
-                        <img src="public/img/post-5.jpg" />
+                        <img src="img/post-5.jpg" />
                       </div>
                       <div class="post-text">
-                        <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                        <a href=""
+                          >Lorem ipsum dolor sit amet consec adipis elit</a
+                        >
                         <div class="post-meta">
                           <p>By<a href="">Admin</a></p>
                           <p>In<a href="">Web Design</a></p>
@@ -450,10 +485,12 @@
                   <div id="latest" class="container tab-pane fade">
                     <div class="post-item">
                       <div class="post-img">
-                        <img src="public/img/post-1.jpg" />
+                        <img src="img/post-1.jpg" />
                       </div>
                       <div class="post-text">
-                        <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                        <a href=""
+                          >Lorem ipsum dolor sit amet consec adipis elit</a
+                        >
                         <div class="post-meta">
                           <p>By<a href="">Admin</a></p>
                           <p>In<a href="">Web Design</a></p>
@@ -462,10 +499,12 @@
                     </div>
                     <div class="post-item">
                       <div class="post-img">
-                        <img src="public/img/post-2.jpg" />
+                        <img src="img/post-2.jpg" />
                       </div>
                       <div class="post-text">
-                        <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                        <a href=""
+                          >Lorem ipsum dolor sit amet consec adipis elit</a
+                        >
                         <div class="post-meta">
                           <p>By<a href="">Admin</a></p>
                           <p>In<a href="">Web Design</a></p>
@@ -474,10 +513,12 @@
                     </div>
                     <div class="post-item">
                       <div class="post-img">
-                        <img src="public/img/post-3.jpg" />
+                        <img src="img/post-3.jpg" />
                       </div>
                       <div class="post-text">
-                        <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                        <a href=""
+                          >Lorem ipsum dolor sit amet consec adipis elit</a
+                        >
                         <div class="post-meta">
                           <p>By<a href="">Admin</a></p>
                           <p>In<a href="">Web Design</a></p>
@@ -486,10 +527,12 @@
                     </div>
                     <div class="post-item">
                       <div class="post-img">
-                        <img src="public/img/post-4.jpg" />
+                        <img src="img/post-4.jpg" />
                       </div>
                       <div class="post-text">
-                        <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                        <a href=""
+                          >Lorem ipsum dolor sit amet consec adipis elit</a
+                        >
                         <div class="post-meta">
                           <p>By<a href="">Admin</a></p>
                           <p>In<a href="">Web Design</a></p>
@@ -498,10 +541,12 @@
                     </div>
                     <div class="post-item">
                       <div class="post-img">
-                        <img src="public/img/post-5.jpg" />
+                        <img src="img/post-5.jpg" />
                       </div>
                       <div class="post-text">
-                        <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                        <a href=""
+                          >Lorem ipsum dolor sit amet consec adipis elit</a
+                        >
                         <div class="post-meta">
                           <p>By<a href="">Admin</a></p>
                           <p>In<a href="">Web Design</a></p>
@@ -515,7 +560,7 @@
 
             <div class="sidebar-widget">
               <div class="image-widget">
-                <a href="#"><img src="public/img/blog-2.jpg" alt="Image" /></a>
+                <a href="#"><img src="img/blog-2.jpg" alt="Image" /></a>
               </div>
             </div>
 
@@ -524,7 +569,9 @@
               <div class="category-widget">
                 <ul>
                   <li>
-                    <q-icon name="navigate_next" color="orange" /><a href="">National</a><span>(98)</span>
+                    <q-icon name="navigate_next" color="orange" /><a href=""
+                      >National</a
+                    ><span>(98)</span>
                   </li>
                   <li><a href="">National</a><span>(98)</span></li>
                   <li><a href="">International</a><span>(87)</span></li>
@@ -539,7 +586,7 @@
 
             <div class="sidebar-widget">
               <div class="image-widget">
-                <a href="#"><img src="public/img/blog-3.jpg" alt="Image" /></a>
+                <a href="#"><img src="img/blog-3.jpg" alt="Image" /></a>
               </div>
             </div>
 
@@ -585,13 +632,38 @@
 <script lang="ts">
 // import { Todo, Meta } from 'components/models';
 import LeaveAcomment from 'components/LeaveAcomment.vue';
-import { defineComponent, ref } from 'vue';
-
+import { defineComponent, onMounted, ref } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
+import { useQuasar } from 'quasar';
+import { useApi } from 'boot/axios';
 
 export default defineComponent({
   name: 'DetailPage',
   components: { LeaveAcomment },
   setup() {
+    const route = useRoute();
+    const router = useRouter();
+    const $q = useQuasar();
+    const postId = +route.params.postId as number;
+    const post = ref([]);
+
+    onMounted(async () => {
+      try {
+        console.log('postId=' + postId);
+        const { data } = await useApi().getPostByPostId(postId);
+        console.log(data.data);
+        post.value = data.data.content;
+      } catch (error) {
+        $q.notify({
+          color: 'negative',
+          position: 'top',
+          message: 'NO post',
+          icon: 'report_problem',
+        });
+        router.go(-1);
+      }
+    });
+
     return {
       text: ref(''),
     };
