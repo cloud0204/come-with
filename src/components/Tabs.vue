@@ -16,7 +16,7 @@
       <q-tab-panels v-model="tab" animated>
         <q-tab-panel name="one">
           <q-card class="my-card" v-for="post in popularPosts" :key="post.id">
-            <q-item clickable tag="a" :to="'/post/' + post.id" @click="aaa">
+            <q-item clickable tag="a" :to="'/post/' + post.id">
               <q-card class="my-card col">
                 <q-img src="https://cdn.quasar.dev/img/parallax2.jpg">
                   <div class="absolute-bottom text-h6">
@@ -82,6 +82,11 @@ import { Post } from './models';
 
 export default defineComponent({
   name: 'TabComponent',
+  // props: {
+  //   refreshPage: {
+  //     type: Promise<void>,
+  //   },
+  // },
   // components: { ExampleComponent },
   setup() {
     const $q = useQuasar();
@@ -104,10 +109,7 @@ export default defineComponent({
         });
       }
     });
-    function aaa() {
-      console.log('999');
-    }
-    return { popularPosts, latestPosts, tab: ref('one'), aaa };
+    return { popularPosts, latestPosts, tab: ref('one') };
   },
 });
 </script>
