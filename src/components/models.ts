@@ -23,10 +23,23 @@ export interface Post {
 }
 
 export interface Comment {
+  id?: number;
   author: string;
   authorUrl?: string;
   content: string;
   email: string;
   postId: number;
   parentId?: number;
+  children?: Comment[];
 }
+
+// export interface CommentA {
+//   id?: number;
+//   author: string;
+//   authorUrl?: string;
+//   content: string;
+//   email: string;
+//   postId: number;
+//   parentId?: number;
+//   children?: Comment;
+// }

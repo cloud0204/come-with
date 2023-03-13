@@ -6,7 +6,7 @@ const $q = useQuasar();
 
 export const aaa = defineStore('hhhh', {
   state: () => ({
-    hhhh: null,
+    hhhh: 1,
   }),
   getters: {
     doubleCount: (state) => state.hhhh,
@@ -43,6 +43,9 @@ export const aaa = defineStore('hhhh', {
             icon: 'report_problem',
           });
         });
+    },
+    changeH() {
+      this.hhhh = 2;
     },
   },
 });

@@ -53,36 +53,30 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, Ref, ref } from 'vue';
+import { defineComponent, onMounted, Ref, ref, toRef } from 'vue';
 import { useQuasar } from 'quasar';
-import { api, useApi } from 'boot/axios';
+import { useApi } from 'boot/axios';
 import { Comment } from './models';
+import { useRoute, useRouter } from 'vue-router';
 
 export default defineComponent({
   name: 'LeaveAcomment',
-  // props: {
-  //   editor: {
-  //     type: String,
-  //     default: ''
-  //   },
+  props: {
+    // postId: {
+    //   type: Number,
+    //   default: 1,
+    // },
 
-  //   caption: {
-  //     type: String,
-  //     default: ''
-  //   },
-
-  //   link: {
-  //     type: String,
-  //     default: '#'
-  //   },
-
-  //   icon: {
-  //     type: String,
-  //     default: ''
-  //   }
-  // },
-  setup() {
+    parentId: {
+      type: Number,
+      default: 0,
+    },
+  },
+  setup(props) {
     const $q = useQuasar();
+    const route = useRoute();
+    const router = useRouter();
+    const postId = toRef(route.params, 'postId');
     const mailformat =
       /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 
@@ -104,7 +98,8 @@ export default defineComponent({
       // authorUrl: string;
       content: editor,
       email: email,
-      postId: 1,
+      postId: +postId.value,
+      parentId: props.parentId,
     });
 
     function isEmail(val: string): boolean {
@@ -135,6 +130,7 @@ export default defineComponent({
     };
 
     return {
+      postId,
       commentList,
       // name: ref(''),
       // email: ref(''),
@@ -162,6 +158,7 @@ export default defineComponent({
       // errorMsg,
 
       accept,
+      payload,
 
       onSubmit() {
         // nameRef.value.validate()
@@ -187,6 +184,7 @@ export default defineComponent({
           }
         } else {
           doComment();
+          router.go(0);
           $q.notify({
             icon: 'done',
             color: 'positive',

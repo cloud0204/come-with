@@ -18,7 +18,9 @@
               <q-img
                 class="rounded-borders"
                 :src="
-                  post.thumbnail || 'https://cdn.quasar.dev/img/parallax2.jpg'
+                  post.thumbnail
+                    ? 'http://35.187.150.76:80' + post.thumbnail
+                    : 'https://cdn.quasar.dev/img/parallax2.jpg'
                 "
               />
             </q-card-section>

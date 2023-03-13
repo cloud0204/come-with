@@ -15,9 +15,11 @@ declare module '@vue/runtime-core' {
 // "export default () => {}" function below (which runs individually
 // for each client)
 const api = axios.create({
-  baseURL: 'http://127.0.0.1:8090/',
+  baseURL: 'http://127.0.0.1:8090',
+  // baseURL: 'http://35.187.150.76:80/',
   headers: {
-    'API-Authorization': 'joe2.0',
+    // 'API-Authorization': 'joe2.0',
+    'API-Authorization': 'cloud',
   },
 });
 
@@ -34,7 +36,7 @@ const useApi = () => {
     );
   const getPostByPostId = (postId: number) =>
     api.get('/api/content/posts/' + postId);
-  const getPostContentByPostId = (postId: number) =>
+  const getPostContentByPostId = (postId: string) =>
     api.get('/api/content/posts/post/' + postId);
   const getListYearArchives = () => api.get('/api/content/archives/years');
   const getLatestPosts = () =>

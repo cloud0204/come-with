@@ -23,8 +23,10 @@
         </q-card-section>
 
         <q-card-actions>
-          <q-btn flat color="dark" label="Share" />
-          <q-btn flat color="primary" label="Book" />
+          <q-btn flat color="yellow" @click="expanded = !expanded">
+            Reply
+            <q-icon name="reply" />
+          </q-btn>
 
           <q-space />
 
@@ -39,59 +41,19 @@
         </q-card-actions>
 
         <q-card-section>
+          <q-slide-transition>
+            <div v-show="expanded">
+              <q-separator />
+              <q-card-section class="text-subitle2">
+                <LeaveAcomment :parentId="0" />
+              </q-card-section>
+            </div>
+          </q-slide-transition>
           <div class="text-overline text-orange-9" style="font-size: 16px">
             {{ post.commentCount }} Comments
           </div>
-          <LeaveAcomment />
-          <!-- <q-card
-            class="my-card"
-            flat
-            bordered
-            v-for="comment in comments"
-            :key="comment.id"
-          >
-            <q-item>
-              <q-item-section avatar>
-                <q-avatar>
-                  <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
-                </q-avatar>
-              </q-item-section>
+          <!-- <LeaveAcomment /> -->
 
-              <q-item-section>
-                <q-item-label>{{ comment.author }}</q-item-label>
-                <q-item-label caption> {{ comment.email }} </q-item-label>
-              </q-item-section>
-            </q-item>
-
-            <q-separator />
-
-            <q-card-section horizontal>
-              <q-card-section class="col">
-                {{ comment.content }}
-              </q-card-section>
-
-              <q-separator vertical />
-
-              <q-card-section>
-                <q-card-actions>
-                  <q-btn flat color="yellow">
-                    Reply
-                    <q-icon name="reply" />
-                  </q-btn>
-                </q-card-actions>
-              </q-card-section>
-            </q-card-section>
-            <q-slide-transition>
-              <div v-show="expanded">
-                <q-separator />
-                <q-card-section class="text-subitle2">
-                  <LeaveAcomment />
-                </q-card-section>
-              </div>
-            </q-slide-transition>
-
-            <CommentComponent :children="comment.children" />
-          </q-card> -->
           <CommentComponent :comments="comments" />
         </q-card-section>
       </q-card>

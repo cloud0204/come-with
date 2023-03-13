@@ -14,15 +14,15 @@
       </q-item-section>
       <q-item-section>
         <q-item-label>{{ comment.author }}</q-item-label>
-        <q-item-label caption> {{ comment.email }} </q-item-label>
+        <q-item-label caption> {{ comment.email }}</q-item-label>
       </q-item-section>
     </q-item>
     <q-separator />
     <q-card-section horizontal>
-      <q-card-section class="col">
-        {{ comment.content }}
-      </q-card-section>
-
+      <q-card-section
+        class="col"
+        v-bind:innerHTML="comment.content"
+      ></q-card-section>
       <q-card-section>
         <q-card-actions>
           <q-btn
@@ -40,7 +40,7 @@
       <div v-show="expanded[index]">
         <q-separator />
         <q-card-section class="text-subitle2">
-          <LeaveAcomment />
+          <LeaveAcomment :parentId="comment.id" />
         </q-card-section>
       </div>
     </q-slide-transition>
